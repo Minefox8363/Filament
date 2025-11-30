@@ -60,7 +60,6 @@ The following [Filament plugins](https://filamentphp.com/plugins) come fully imp
 
 | **Plugin**                                                          | **Description**                                    | **Author**                                      |
 | :------------------------------------------------------------------ | :------------------------------------------------- | :---------------------------------------------- |
-| [Curator](https://github.com/awcodes/filament-curator)              | A beautiful media library.                         | [awcodes](https://github.com/awcodes)           |
 | [Gravatar](https://github.com/awcodes/filament-gravatar)            | Easy avatar integration powered by Gravatar.       | [awcodes](https://github.com/awcodes)           |
 | [Exceptions](https://github.com/bezhansalleh/filament-exceptions)   | A simple but powerful Exception viewer.            | [bezhansalleh](https://github.com/bezhansalleh) |
 | [Jobs Monitor](https://github.com/croustibat/filament-jobs-monitor) | Easily monitor background jobs and their progress. | [croustibat](https://github.com/croustibat)     |

@@ -14,19 +14,7 @@
             href="{{ $post->url }}"
             wire:navigate
           >
-            <div class="w-full h-48 mb-2 overflow-hidden border rounded-lg group-hover:brightness-90">
-              @if ($post->image)
-                <img
-                  class="object-cover w-full h-full"
-                  src="{{ $post->image->url }}"
-                  alt="{{ $post->image->alt ?? $post->title }}"
-                />
-              @else
-                <div class="flex items-center justify-center w-full h-full text-gray-400 bg-gray-200">
-                  Article
-                </div>
-              @endif
-            </div>
+            <div class="w-full h-48 mb-2 overflow-hidden border rounded-lg bg-gray-50"></div>
 
             <h3 class="text-lg text-gray-700 group-hover:text-primary-500">
               {{ $post->title }}

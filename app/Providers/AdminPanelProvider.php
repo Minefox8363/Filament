@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Filament\Auth\Login;
-use App\Filament\Plugins\CuratorWithoutNavigation;
 use Awcodes\FilamentGravatar\GravatarPlugin;
 use Awcodes\FilamentGravatar\GravatarProvider;
 use BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin;
@@ -46,10 +45,6 @@ class AdminPanelProvider extends PanelProvider
                         hasAvatars: false
                     )
                     ->enableTwoFactorAuthentication(),
-
-                CuratorWithoutNavigation::make()
-                    ->label('Media')
-                    ->pluralLabel('Media Library'),
 
                 FilamentJobsMonitorPlugin::make()
                     ->navigationCountBadge()
