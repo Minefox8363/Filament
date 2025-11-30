@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Filament\Auth\Login;
-use Awcodes\Curator\CuratorPlugin;
+use App\Filament\Plugins\CuratorWithoutNavigation;
 use Awcodes\FilamentGravatar\GravatarPlugin;
 use Awcodes\FilamentGravatar\GravatarProvider;
 use BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin;
@@ -47,12 +47,9 @@ class AdminPanelProvider extends PanelProvider
                     )
                     ->enableTwoFactorAuthentication(),
 
-                CuratorPlugin::make()
+                CuratorWithoutNavigation::make()
                     ->label('Media')
-                    ->pluralLabel('Media Library')
-                    ->navigationIcon('heroicon-o-photo')
-                    ->navigationGroup('Media')
-                    ->navigationCountBadge(),
+                    ->pluralLabel('Media Library'),
 
                 FilamentJobsMonitorPlugin::make()
                     ->navigationCountBadge()
@@ -70,7 +67,6 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(fn () => view('components.logo'))
             ->navigationGroups([
                 'Collections',
-                'Media',
                 'Settings',
             ])
             ->colors([
