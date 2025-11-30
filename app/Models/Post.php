@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Filament\Resources\PostResource;
-use Awcodes\Curator\Models\Media;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -22,7 +21,6 @@ class Post extends Model
         'title',
         'slug',
         'content',
-        'image_id',
         'user_id',
         'is_published',
         'published_at',
@@ -47,16 +45,6 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get the featured image for the post.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function image()
-    {
-        return $this->belongsTo(Media::class);
     }
 
     /**

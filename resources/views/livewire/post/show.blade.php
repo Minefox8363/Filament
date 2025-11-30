@@ -31,14 +31,6 @@
               @markdom($block->data->content)
             @break
 
-            @case('figure')
-              <x-figure
-                :image="$block->data->image"
-                :alt="$block->data->alt"
-                :caption="$block->data->caption"
-              />
-            @break
-
             @default
               @dump($block)
           @endswitch

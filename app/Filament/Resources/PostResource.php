@@ -4,8 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms;
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Form;
@@ -90,27 +88,6 @@ class PostResource extends Resource
                                                 Forms\Components\MarkdownEditor::make('content')
                                                     ->required(),
                                             ]),
-
-                                        Builder\Block::make('figure')
-                                            ->schema([
-                                                CuratorPicker::make('image')
-                                                    ->required(),
-
-                                                Forms\Components\Fieldset::make()
-                                                    ->label('Details')
-                                                    ->schema([
-                                                        Forms\Components\TextInput::make('alt')
-                                                            ->label('Alt Text')
-                                                            ->placeholder('Enter alt text')
-                                                            ->required()
-                                                            ->maxLength(255),
-
-                                                        Forms\Components\TextInput::make('caption')
-                                                            ->placeholder('Enter a caption')
-                                                            ->maxLength(255),
-                                                    ]),
-
-                                            ]),
                                     ]),
                             ]),
 
@@ -130,9 +107,6 @@ class PostResource extends Resource
                                     ->default(fn () => auth()->id())
                                     ->searchable()
                                     ->required(),
-
-                                CuratorPicker::make('image_id')
-                                    ->label('Featured Image'),
 
                                 Forms\Components\DatePicker::make('published_at')
                                     ->label('Publish Date')
@@ -157,10 +131,6 @@ class PostResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->sortable()
                     ->searchable(),
-
-                CuratorColumn::make('image')
-                    ->circular()
-                    ->size(32),
 
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('Author')
