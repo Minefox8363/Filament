@@ -2,7 +2,6 @@
 
 namespace App\Livewire;
 
-use App\Models\Site;
 use Livewire\Component;
 use Spatie\SchemaOrg\Schema;
 
@@ -21,9 +20,12 @@ class Home extends Component
      */
     public function render()
     {
+        $title = config('app.name');
+        $description = 'See every site you have access to from one Pelican-style home base.';
+
         seo()
-            ->title($title = config('app.name'))
-            ->description($description = 'Lorem ipsum...')
+            ->title($title)
+            ->description($description)
             ->canonical($url = route('home'))
             ->addSchema(
                 Schema::webPage()
@@ -33,9 +35,13 @@ class Home extends Component
                     ->author(Schema::organization()->name($title))
             );
 
-        $sites = Site::where('user_id', auth()->id())
-            ->latest()
-            ->get();
+        $user = auth()->user();
+
+        $sites = $user
+            ? $user->sites()
+                ->latest()
+                ->get()
+            : collect();
 
         return view('livewire.home', compact('sites'));
     }
