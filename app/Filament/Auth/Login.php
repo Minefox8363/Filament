@@ -71,6 +71,6 @@ class Login extends BaseAuth
      */
     protected function getRedirectUrl(): string
     {
-        return Filament::getPanel('admin')->getUrl();
+        return route('home');
     }
 }
