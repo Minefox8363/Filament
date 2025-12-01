@@ -2,6 +2,7 @@
 
 namespace App\Filament\Auth;
 
+use Filament\Facades\Filament;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -70,6 +71,6 @@ class Login extends BaseAuth
      */
     protected function getRedirectUrl(): string
     {
-        return route('home');
+        return Filament::getPanel('admin')->getUrl();
     }
 }
