@@ -14,7 +14,7 @@
         <x-button
           :icon="Auth::check() ? 'heroicon-o-cog' : 'heroicon-s-user'"
           size="xs"
-          :url="Filament\\Pages\\Dashboard::getUrl()"
+          :url="\Filament\Pages\Dashboard::getUrl()"
           class="!bg-white/10 !border-white/20 hover:!bg-white/20"
         >
           {{ Auth::check() ? 'Manage' : 'Login' }}
