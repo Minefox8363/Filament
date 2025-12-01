@@ -20,7 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
             App\Http\Middleware\AddSeoDefaults::class,
         ]);
 
-        $middleware->redirectTo(fn () => Filament\Pages\Dashboard::getUrl());
+        $middleware->redirectTo(fn () => route('home'));
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->reportable(fn (Throwable $e) => $exceptions->handler->shouldReport($e) &&
