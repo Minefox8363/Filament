@@ -3,33 +3,41 @@
 
   <x-container>
     <h2 class="mb-8 text-4xl">
-      Latest Posts
+      Available Sites
     </h2>
 
-    <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      @forelse ($posts as $post)
-        <div>
-          <a
-            class="*:transition group"
-            href="{{ $post->url }}"
-            wire:navigate
-          >
-            <div class="w-full h-48 mb-2 overflow-hidden border rounded-lg bg-gray-50"></div>
-
-            <h3 class="text-lg text-gray-700 group-hover:text-primary-500">
-              {{ $post->title }}
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      @forelse ($sites as $site)
+        <div class="p-4 transition border rounded-lg shadow-sm group hover:border-primary-500">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <h3 class="text-lg font-semibold text-gray-800 group-hover:text-primary-600">
+              {{ $site->name }}
             </h3>
-          </a>
+
+            <span class="px-2 text-xs text-primary-700 bg-primary-50 rounded-full">
+              Site
+            </span>
+          </div>
+
+          <p class="text-sm text-gray-600 break-words">
+            {{ $site->url }}
+          </p>
+
+          <div class="mt-4">
+            <a
+              class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700"
+              href="{{ $site->url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit site
+              <x-heroicon-o-arrow-top-right-on-square class="w-4 h-4" />
+            </a>
+          </div>
         </div>
       @empty
-        <div>No posts yet.</div>
+        <div class="text-gray-600">No sites added yet.</div>
       @endforelse
     </div>
-
-    @if ($posts->hasPages())
-      <div class="pt-6 mt-6 border-t">
-        {{ $posts->links() }}
-      </div>
-    @endif
   </x-container>
 </div>
