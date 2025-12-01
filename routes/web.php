@@ -1,8 +1,8 @@
 <?php
 
-use App\Livewire\Home;
+use Filament\Facades\Filament;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('auth')->group(function () {
-    Route::get('/', Home::class)->name('home');
-});
+Route::get('/', function () {
+    return redirect()->to(Filament::getPanel('admin')->getUrl());
+})->name('home');
