@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
   <head>
     {{ seo()->render() }}
 
@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
-  <body class="font-sans text-base leading-normal tracking-normal text-gray-800">
+  <body class="font-sans text-base leading-normal tracking-normal bg-gray-950 text-gray-100">
     <div class="flex flex-col min-h-screen">
       <x-sections.header />
 

@@ -64,4 +64,12 @@ class Login extends BaseAuth
             ]);
         }
     }
+
+    /**
+     * Get the URL to redirect the user to after logging in.
+     */
+    protected function getRedirectUrl(): string
+    {
+        return route('home');
+    }
 }
