@@ -24,4 +24,77 @@
       radial-gradient(circle at 90% 10%, rgba(37, 99, 235, 0.12), transparent 20%),
       radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.08), transparent 30%);
   }
+
+  .status-pill {
+    @apply inline-flex items-center gap-3 text-sm text-white/80 bg-white/5 border border-white/10 rounded-full px-4 py-2 shadow-lg;
+  }
+
+  .status-indicator {
+    @apply h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(16,185,129,0.18)];
+  }
+
+  .home-grid {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3;
+  }
+
+  .site-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/70 via-gray-900/60 to-gray-950/90 p-6 shadow-2xl transition-transform duration-200 ease-out;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.5);
+  }
+
+  .site-card:hover {
+    @apply -translate-y-1 border-primary-400/60 shadow-[0_25px_55px_rgba(59,130,246,0.35)];
+  }
+
+  .site-card__beam {
+    @apply pointer-events-none absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-transparent;
+  }
+
+  .site-card__header {
+    @apply mb-4 flex items-center justify-between gap-4;
+  }
+
+  .site-card__icon {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-xl border border-primary-400/30 bg-primary-500/10 text-primary-200;
+  }
+
+  .site-card__badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/80;
+  }
+
+  .site-card__badge-dot {
+    @apply h-1.5 w-1.5 rounded-full bg-primary-400;
+  }
+
+  .site-card__body {
+    @apply space-y-4;
+  }
+
+  .site-card__name {
+    @apply text-xl font-semibold text-white;
+  }
+
+  .site-card__url {
+    @apply break-words text-sm text-gray-300;
+  }
+
+  .site-card__meta {
+    @apply inline-flex items-center gap-2 text-xs text-gray-400;
+  }
+
+  .site-card__footer {
+    @apply mt-4 flex items-center justify-between gap-3 text-sm;
+  }
+
+  .site-card__status {
+    @apply inline-flex items-center gap-2 text-xs font-medium text-emerald-200;
+  }
+
+  .site-card__status-dot {
+    @apply h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.2)];
+  }
+
+  .site-card__cta {
+    @apply inline-flex items-center gap-2 font-semibold text-primary-200 hover:text-white;
+  }
 }
