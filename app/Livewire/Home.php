@@ -10,6 +10,11 @@ class Home extends Component
 {
 
     /**
+     * Layout used by the component.
+     */
+    protected string $layout = 'components.layouts.app';
+
+    /**
      * Render the component.
      *
      * @return \Illuminate\View\View
