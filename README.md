@@ -6,7 +6,7 @@ Here lives a beautiful starting point to quickly bootstrap your next [TALL stack
 
 ## Features
 
-- 🚀 Quick, clean starting point with an example **Post** model and resource.
+- 🚀 Quick, clean starting point with ready-to-use Filament resources.
 - 🧑‍💻 Fully pre-configured and [customized](#plugins-used) Filament panel with best practices in place.
 - 🎨 Clean, minimally styled frontend powered by [Livewire](https://livewire.laravel.com/).
 - 💄 [TailwindCSS](https://tailwindcss.com/) and [Vite](https://vitejs.dev/) ready for immediate use.
