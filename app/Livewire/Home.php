@@ -2,14 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Post;
+use App\Models\Site;
 use Livewire\Component;
-use Livewire\WithPagination;
 use Spatie\SchemaOrg\Schema;
 
 class Home extends Component
 {
-    use WithPagination;
 
     /**
      * Render the component.
@@ -30,10 +28,10 @@ class Home extends Component
                     ->author(Schema::organization()->name($title))
             );
 
-        $posts = Post::published()
-            ->latest('published_at')
-            ->paginate(6);
+        $sites = Site::where('user_id', auth()->id())
+            ->latest()
+            ->get();
 
-        return view('livewire.home', compact('posts'));
+        return view('livewire.home', compact('sites'));
     }
 }
